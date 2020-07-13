@@ -1,5 +1,6 @@
-# provider "namecheap" {
-# }
+provider "namecheap" {
+  version = "~> 1.5.0"
+}
 
 # resource "namecheap_record" "www-example-com" {
 #   name    = "www"
