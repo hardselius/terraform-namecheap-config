@@ -25,6 +25,15 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
+    - name: Create secrets.auto.tfvars
+      run: |
+        sh -c "cat > secrets.auto.tfvars" << EOT
+        nc_username="${{ secrets.NAMECHEAP_USERNAME }}"
+        nc_api_user="${{ secrets.NAMECHEAP_API_USER }}"
+        nc_token="${{ secrets.NAMECHEAP_TOKEN }}"
+        nc_ip_address="84.209.40.117"
+        EOT
+
     - name: Terraform Plan
       run: terraform plan
 

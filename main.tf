@@ -1,5 +1,10 @@
 provider "namecheap" {
   version = "~> 1.5.0"
+
+  username = var.nc_username
+  api_user = var.nc_api_user
+  token    = var.nc_token
+  ip       = var.nc_ip_address
 }
 
 # resource "namecheap_record" "www-example-com" {
