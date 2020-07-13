@@ -33,3 +33,9 @@ variable "nc_use_sandbox" {
   type        = bool
   default     = false
 }
+
+variable "nc_domain" {
+  description = "The Namecheap domain to configure"
+  type        = string
+  default     = "hardselius.dev"
+}

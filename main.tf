@@ -23,8 +23,10 @@ provider "namecheap" {
 #   address = format("fm%d.hardselius.dev.dkim.fmhosted.com", count.index + 1)
 # }
 
-resource "null_resource" "terraform-github-actions" {
-  triggers = {
-    value = "This resource was created using GitHub Actions!"
-  }
+resource "namecheap_record" "www-example-com" {
+  name    = "www"
+  domain  = var.nc_domain
+  address = "127.0.0.1"
+  mx_pref = 10
+  type    = "A"
 }
